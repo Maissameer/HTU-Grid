@@ -115,7 +115,16 @@ img ,.div-img{
     transform: rotate(269deg);
     transform-origin: 64% 50%;
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 400px) {
+    body{
+        /* height: 100vh; */
+        width: 77vw;
+        margin: auto;
+       
+        }
+        main {
+            width: 150vw;
+        }
     .container{
         display: grid;
         grid-template-columns: repeat(2 , 1fr);
@@ -125,6 +134,8 @@ img ,.div-img{
     }
     .header{
     grid-template-rows: auto auto auto;
+    width: 150vw;
+
     }
     .profile{
         grid-area: 1/1/2/2;
@@ -166,12 +177,12 @@ strong{
   }
 
   @media screen and (max-width: 200px) {
-    /* body{
-        height: 100vh;
-        width: 70vw;
+    body{
+        /* height: 100vh; */
+        width: 90vw;
         margin: auto;
-        min-width: 220px;
-        } */
+       
+        }
     .container{
         display: grid;
         grid-template-columns: 1fr;
@@ -179,5 +190,6 @@ strong{
         place-items: center;
         gap: 20px;
         /* width: 100%; */
+        width: 100%;
     }
   }
