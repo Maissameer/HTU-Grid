@@ -3,29 +3,33 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    /* max-width: 100%; */
 }
 body{
-/* height: 100vh; */
-width: 70vw;
-margin: auto;
-/* min-width: 220px; */
+    font-family: "Open Sans", Arial, sans-serif;
+    /* min-height: 100vh; */
+    background-color: #fafafa;
+    color: #262626;
+    
+
 }
 .header{
     display: grid;
-    /* grid-template-columns: repeat(3, 1fr 2fr); */
     grid-auto-rows: auto;
     padding: 50px 0;
     grid-template-columns: 1fr  2fr;
     place-items: center;
     font-family : "Open Sans", Arial, sans-serif;
-    width: 77vw;
+    grid-column-gap: 2rem;
+    align-items: center;
 }
 
-.profile{
+.profile-img{
     border-radius: 115px;
     height: 200px;
     width: 208px;
     grid-area: 1/1/span 3/2;
+    /* grid-column-gap: 3rem; */
 }
 h1{
     font-weight: lighter;
@@ -61,16 +65,15 @@ h1{
     margin: auto;
 
 }
-main{
-    width: 77vw;
-}
+
 .container{
     display: grid;
-    grid-template-columns: repeat(3 , 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    /* grid-template-columns: repeat(3 , 2fr); */
+
     grid-auto-rows: auto;
-    place-items: center;
-    gap: 20px;
-  
+    align-items: center;
+        gap: 20px;
 
     
 }
@@ -78,9 +81,10 @@ main{
     position: relative;
 }
 img ,.div-img{
-    height: 300px;
+    height: 100%;
     width: 100%;
     display: block;
+object-fit: cover;
 }
 .icons{
     position: absolute; 
@@ -92,16 +96,15 @@ img ,.div-img{
     font-size: x-large;
 }
 .hidden-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    /* text-align: center; */
-    top: 50%;
-    left: 43%;
-    /* height: 100%; */
-    /* width: 100%; */
-    opacity: 0;
-    transition: .3s cubic-bezier(0.59, 1.27, 0.07, 0.11);
-    /* background-color: rgb(188 118 118 / 33%); */
+    top: 0;
+    width: 100%;
+    height: 100%;
     color: white;
+    opacity: 0;
     font-size: x-large;
     cursor: pointer;
 }
@@ -116,28 +119,33 @@ img ,.div-img{
     transform-origin: 64% 50%;
   }
   @media screen and (max-width: 400px) {
-    body{
-        /* height: 100vh; */
+    /* body{
+        height: 100vh; 
         width: 77vw;
         margin: auto;
        
-        }
+        } */
         main {
-            width: 150vw;
+            width: 170vw;
         }
     .container{
+        width: 170vw;
         display: grid;
-        grid-template-columns: repeat(2 , 1fr);
+        /* grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr )); */
+        /* grid-template-columns: repeat(2 , 1fr); */
         grid-auto-rows: auto;
-        place-items: center;
-        gap: 20px;
+        align-items: center;
+                gap: 20px;
     }
     .header{
     grid-template-rows: auto auto auto;
-    width: 150vw;
+    width: 170vw;
+    /* grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); */
+
+
 
     }
-    .profile{
+    .profile-img{
         grid-area: 1/1/2/2;
     }
     .name-info{
@@ -158,7 +166,6 @@ img ,.div-img{
    } */
 .follow{
     grid-area: 3/1/4/span 2;
-    grid-template-columns: 2fr 2fr 3fr;
     border-bottom: 1px solid lightgray;
     border-top: 1px solid lightgray;
     margin: 20px 0;
@@ -174,22 +181,38 @@ strong{
     top: 50%;
     left: 30%;}
 
-  }
-
+}
   @media screen and (max-width: 200px) {
     body{
         /* height: 100vh; */
-        width: 90vw;
+        /* width: 90vw; */
         margin: auto;
        
         }
     .container{
         display: grid;
-        grid-template-columns: 1fr;
+        /* grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); */
+
+        /* grid-template-columns: 1fr; */
         grid-auto-rows: auto;
         place-items: center;
         gap: 20px;
         /* width: 100%; */
+        /* width: 100%; */
+    }
+    .follow{
+        grid-area: 3/1/4/span 2;
+        border-bottom: 1px solid lightgray;
+        border-top: 1px solid lightgray;
+        margin: 20px 0;
+        text-align: center;
         width: 100%;
     }
+    .header{
+        grid-template-rows: auto auto auto;
+        /* width: 150vw; */
+        /* grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); */
+
+    
+        }
   }
